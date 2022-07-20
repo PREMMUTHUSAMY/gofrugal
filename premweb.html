@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 <meta name="frontpage" content="width=device-width, initial-scale=1">
 <style>
 body {font-family: Arial, Helvetica, sans-serif;}
 form {border: 3px solid #D2D1D1;}
-
+h1 {text-align: center;}
 input[type=text], input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -39,10 +39,29 @@ button:hover {
   background-color: #DB3236;
   float:right;
 }
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
 
 .imgcontainer {
-  text-align: right;
-  margin: 24px 0 12px 0;
+  text-align:left;
+ 
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+  
+ background-color: #4267B2;
+
 }
 
 img.avatar {
@@ -50,8 +69,35 @@ img.avatar {
   border-radius: 50%;
   float:'left';
    style. left = "-100px";
+   
+
+ background-color: #4267B2;
+
 }
-  img.avatar {
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+ 
+  overflow-x: hidden;
+  padding-top: 100px;
+}
+
+.left {
+  left: 0;
+  background-color: #007BFF;
+   margin-left: auto;
+  margin-right: auto;
+
+}
+
+.right {
+  right: 0;
+  background-color:white;
+}
+  img.all {
   width: 40%;
   border-radius: 30%;
   float:'left';
@@ -61,10 +107,11 @@ img.avatar {
 .container {
   padding: 16px;
    float: right;
+   style. left = "100px";
 }
 
 span.psw {
-  float: right;
+  float: left;
   padding-top: 16px;
 }
 
@@ -72,13 +119,15 @@ span.psw {
 @media screen and (max-width: 200px) {
   span.psw {
      display: block;
-     float: none;
+     float: right;
   }
   .facebookbtn {
      width: 100%;
+     float: right;
   }
 .googlebtn {
      width: 100%;
+     float: right;
   }
 }
 </style>
@@ -88,34 +137,40 @@ span.psw {
 <h2>Login Form</h2>
 
 <form action="/action_page.php" method="post">
-  <div class="imgcontainer">
-     <img src="https://github.com/PREMMUTHUSAMY/gofrugal/blob/main/images/image%205gofrugal%20logo.jpg" alt="logo" class="avatar">
-    <img src="https://github.com/PREMMUTHUSAMY/gofrugal/blob/main/images/image%204gofrugal%20Icon.jpg" alt="logo" class="avatar">
+ <div class="split left">
+   
+   <img src="data:image/jpeg;base64,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" alt="logo" class="avatar">
+     <br>
+     <br>
+    <img src="data:image/png;base64,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" alt="logo" class="all">
    
   </div>
-
-  <div class="container">
+  
+<div class="split right">
+    <h1>login</h1>
+    <br>
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter Username" name="uname" required>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required>
-        
+         <br>
+   <span class="psw">Forgot password?</a></span>
+   <br>
     <button type="submit">Login</button>
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
-  </div>
+  
 
-  <div class="container" style="background-color:#f1f1f1">
+ 
+ 
    <button type="button" class="facebookbtn">facebook</button>
+   
     <button type="button" class="googlebtn">google</button>
-  <br>
-    <span class="psw">Forgot password?</a></span>
+  
   </div>
 </form>
 
 </body>
 </html>
-
-
